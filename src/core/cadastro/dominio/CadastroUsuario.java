@@ -44,8 +44,11 @@ public class CadastroUsuario extends Jogador{
                         System.out.println("Cadastro feito com sucesso!");
                         break;
                     }
+                    System.out.println("Digite uma senha válida!");
                 }
+                System.out.println("Digite um email válido!");
             }
+            System.out.println("Digite um nome de usuário válido!");
         }
     }
 }

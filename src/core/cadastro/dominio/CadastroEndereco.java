@@ -31,7 +31,30 @@ public class CadastroEndereco extends Endereco {
 
             System.out.println("Cep: ");
             this.cepDB = entrada.nextLine();
-            
+
+            boolean estadoInvalido = estadoDB == null || estadoDB.isEmpty();
+            boolean cidadeInvalido = cidadeDB == null || cidadeDB.isEmpty();
+            boolean bairroInvalido = bairroDB == null || bairroDB.isEmpty();
+            boolean ruaInvalido = ruaDB == null || ruaDB.isEmpty();
+            boolean lograInvalido = logradouroDB == null || logradouroDB.isEmpty();
+            boolean numeroInvalido = numeroResidenciaDB == 0;
+            boolean cepInvalido = cepDB == null || cepDB.isEmpty();
+
+            if (!estadoInvalido){
+                if (!cidadeInvalido){
+                    if (!bairroInvalido){
+                        if (!ruaInvalido){
+                            if (!lograInvalido){
+                                if (!numeroInvalido){
+                                    if (!cepInvalido){
+
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
 
         }
     }
