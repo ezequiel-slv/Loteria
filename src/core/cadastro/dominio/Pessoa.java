@@ -1,32 +1,51 @@
 package core.cadastro.dominio;
 
+import core.endereco.Endereco;
+
 public abstract class Pessoa {
 
-    protected String nome;
-    protected String dataNascimento;
-    protected String cpf;
+    protected String nomeDB;
+    protected String datanascimentoDB;
+    protected String cpfDB;
+    protected Endereco endereco;
 
     public String getNome() {
-        return nome;
+        return nomeDB;
     }
 
     public void setNome(String nome) {
-        this.nome = nome;
+        this.nomeDB = nome;
     }
 
-    public String getDataNascimento() {
-        return dataNascimento;
+    public String getdatanascimentoDB() {
+        return datanascimentoDB;
     }
 
-    public void setDataNascimento(String dataNascimento) {
-        this.dataNascimento = dataNascimento;
+    public void setdatanascimentoDB(String datanascimentoDB) {
+        this.datanascimentoDB = datanascimentoDB;
     }
 
-    public String getCpf() {
-        return cpf;
+    public String getNomeDB() {
+        return nomeDB;
     }
 
-    public void setCpf(String cpf) {
-        this.cpf = cpf;
+    public void setNomeDB(String nomeDB) {
+        this.nomeDB = nomeDB;
+    }
+
+    public String getDatanascimentoDB() {
+        return datanascimentoDB;
+    }
+
+    public void setDatanascimentoDB(String datanascimentoDB) {
+        this.datanascimentoDB = datanascimentoDB;
+    }
+
+    public String getCpfDB() {
+        return cpfDB;
+    }
+
+    public void setCpfDB(String cpfDB) {
+        this.cpfDB = cpfDB;
     }
 }

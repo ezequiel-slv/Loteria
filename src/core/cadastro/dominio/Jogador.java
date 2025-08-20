@@ -7,32 +7,32 @@ public class Jogador extends Pessoa{
         return  codJogador++;
     }
     @Override
-    public String getNome() {
+    public String getNomeDB() {
         return super.getNome();
     }
 
     @Override
-    public void setNome(String nome) {
+    public void setNomeDB(String nome) {
         super.setNome(nome);
     }
 
     @Override
-    public String getDataNascimento() {
-        return super.getDataNascimento();
+    public String getdatanascimentoDB() {
+        return super.getdatanascimentoDB();
     }
 
     @Override
-    public void setDataNascimento(String dataNascimento) {
-        super.setDataNascimento(dataNascimento);
+    public void setdatanascimentoDB(String datanascimentoDB) {
+        super.setdatanascimentoDB(datanascimentoDB);
     }
 
     @Override
-    public String getCpf() {
-        return super.getCpf();
+    public String getCpfDB() {
+        return super.getCpfDB();
     }
 
     @Override
-    public void setCpf(String cpf) {
-        super.setCpf(cpf);
+    public void setCpfDB(String cpfDB) {
+        super.setCpfDB(cpfDB);
     }
 }

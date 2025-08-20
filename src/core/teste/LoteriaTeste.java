@@ -1,9 +1,9 @@
 package core.teste;
 
-import core.cadastro.dominio.Cadastro;
+import core.cadastro.dominio.CadastroUsuario;
 
 public class LoteriaTeste {
     public static void main(String[] args) {
-        Cadastro cadastro = new Cadastro();
+        CadastroUsuario cadastro = new CadastroUsuario();
     }
 }

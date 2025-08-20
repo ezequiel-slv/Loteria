@@ -1,25 +1,27 @@
 package core.cadastro.dominio;
 
-import core.exception.ErrorCadastro;
+import core.endereco.Endereco;
+import core.exception.ErrorCriarUsuario;
 
 import java.util.Scanner;
 
-public class Cadastro extends Jogador{
+public class CadastroUsuario extends Jogador{
     private String emailDB;
     private String senhaDB;
+    private long numeroTelefoneDB;
+    private Endereco  endereco;
 
     private static final String rotulo = "---- Cadastro ----";
 
     static {
         System.out.println(rotulo);
     }
-
-    public void fazerCadastro() throws ErrorCadastro {
+    public void criarUsuario() throws ErrorCriarUsuario {
         Scanner entrada = new Scanner(System.in);
 
         while (true){
-            System.out.println("Digite seu nome completo: ");
-            this.nome = entrada.nextLine();
+            System.out.println("Digite seu nomeDB completo: ");
+            this.nomeDB = entrada.nextLine();
 
             System.out.println("Digite seu Email: ");
             this.emailDB = entrada.nextLine();
@@ -27,7 +29,7 @@ public class Cadastro extends Jogador{
             System.out.println("Digite uma senha: ");
             this.senhaDB = entrada.nextLine();
 
-            boolean nomeInvalido = getNome() == null || getNome().isEmpty();
+            boolean nomeDBInvalido = getNomeDB() == null || getNomeDB().isEmpty();
             boolean emailInvalido = !emailDB.matches(".*[@].*") && emailDB.isEmpty();
             boolean upper = senhaDB.matches(".*[A-Z].*");
             boolean low = senhaDB.matches(".*[a-z].*");
@@ -36,7 +38,7 @@ public class Cadastro extends Jogador{
             boolean especialCharacter = senhaDB.matches(".*[!@#$%^&*()\\-+_=~`{}\\[\\]:;\"'<>,.?/|\\\\].*");
             boolean senhaInvalida = !upperAndLow || !num || especialCharacter;
 
-            if (!nomeInvalido){
+            if (!nomeDBInvalido){
                 if (!emailInvalido){
                     if (!senhaInvalida){
                         System.out.println("Cadastro feito com sucesso!");
