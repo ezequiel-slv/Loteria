@@ -1,6 +1,5 @@
 package core.cadastro.dominio;
 
-import core.endereco.Endereco;
 import core.exception.ErrorCriarUsuario;
 
 import java.util.Scanner;
@@ -8,8 +7,6 @@ import java.util.Scanner;
 public class CadastroUsuario extends Jogador{
     private String emailDB;
     private String senhaDB;
-    private long numeroTelefoneDB;
-    private Endereco  endereco;
 
     private static final String rotulo = "---- Cadastro ----";
 

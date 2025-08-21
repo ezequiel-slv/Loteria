@@ -47,14 +47,22 @@ public class CadastroEndereco extends Endereco {
                             if (!lograInvalido){
                                 if (!numeroInvalido){
                                     if (!cepInvalido){
-
+                                        System.out.println("Endereço cadastrado com sucesso!");
+                                        break;
                                     }
+                                    System.out.println("Digite um Cep válido!");
                                 }
+                                System.out.println("Digite um número válido!");
                             }
+                            System.out.println("Digite um logradouro válido!");
                         }
+                        System.out.println("Digite uma rua válida!");
                     }
+                    System.out.println("Digite um bairro válido!");
                 }
+                System.out.println("Digite uma cidade válido!");
             }
+            System.out.println("Digite um estado válido!");
 
         }
     }
