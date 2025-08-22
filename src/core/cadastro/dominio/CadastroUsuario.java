@@ -17,7 +17,7 @@ public class CadastroUsuario extends Jogador{
         Scanner entrada = new Scanner(System.in);
 
         while (true){
-            System.out.println("Digite seu nomeDB completo: ");
+            System.out.println("Digite seu nome completo: ");
             this.nomeDB = entrada.nextLine();
 
             System.out.println("Digite seu Email: ");
@@ -27,25 +27,29 @@ public class CadastroUsuario extends Jogador{
             this.senhaDB = entrada.nextLine();
 
             boolean nomeDBInvalido = getNomeDB() == null || getNomeDB().isEmpty();
-            boolean emailInvalido = !emailDB.matches(".*[@].*") && emailDB.isEmpty();
+            boolean emailInvalido = !emailDB.matches(".*[@].*") || emailDB.isEmpty();
             boolean upper = senhaDB.matches(".*[A-Z].*");
             boolean low = senhaDB.matches(".*[a-z].*");
             boolean num = senhaDB.matches(".*[0-9].*");
             boolean upperAndLow = upper && low;
             boolean especialCharacter = senhaDB.matches(".*[!@#$%^&*()\\-+_=~`{}\\[\\]:;\"'<>,.?/|\\\\].*");
-            boolean senhaInvalida = !upperAndLow || !num || especialCharacter;
+            boolean senhaInvalida = !(upperAndLow && num && especialCharacter);
 
             if (!nomeDBInvalido){
                 if (!emailInvalido){
                     if (!senhaInvalida){
                         System.out.println("Cadastro feito com sucesso!");
                         break;
+                    }else {
+                        System.out.println("Digite uma senha válida!");
                     }
-                    System.out.println("Digite uma senha válida!");
+                }else{
+                    System.out.println("Digite um email válido!");
                 }
-                System.out.println("Digite um email válido!");
+            }else{
+                System.out.println("Digite um nome válido!");
             }
-            System.out.println("Digite um nome de usuário válido!");
         }
+        entrada.close();
     }
 }
