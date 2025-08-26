@@ -1,7 +1,11 @@
 package core.cadastro.dominio;
 
+import core.bancodedados.conexao.ConexaoBD;
 import core.exception.ErrorCriarUsuario;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 import java.util.Scanner;
 
 public class CadastroUsuario extends Jogador{
@@ -51,5 +55,29 @@ public class CadastroUsuario extends Jogador{
             }
         }
         entrada.close();
+    }
+
+    public void Salvar() throws SQLException {
+        String sql = "INSERT INTO user (nome, email, senha) VALUES (?, ?, ?)";
+
+        try (Connection connection = ConexaoBD.getConectado();
+             PreparedStatement statement = connection.prepareStatement(sql)){
+                 statement.setString(1, getNomeDB());
+                 statement.setString(2, getEmailDB());
+                 statement.setString(3, getSenhaDB());
+                 statement.executeUpdate();
+
+        }catch (SQLException e){
+                 throw new RuntimeException("Erro ao salvar usuário: " + e.getMessage());
+        }
+
+    }
+
+    public String getEmailDB() {
+        return emailDB;
+    }
+
+    public String getSenhaDB() {
+        return senhaDB;
     }
 }
