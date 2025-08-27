@@ -72,11 +72,9 @@ public class CadastroUsuario extends Jogador{
         }
 
     }
-
     public String getEmailDB() {
         return emailDB;
     }
-
     public String getSenhaDB() {
         return senhaDB;
     }

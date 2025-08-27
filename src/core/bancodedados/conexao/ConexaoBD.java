@@ -6,7 +6,7 @@ import java.sql.SQLException;
 
 public class ConexaoBD {
     private static final String caminhoConexaoBD = "jdbc:mysql://localhost:3308/loteria";
-    private static final String UsuarioBD = "root";
+    private static final String UsuarioBD = "dev";
     private static final String senhaBD = "password";
     public static Connection getConectado(){
         try {
