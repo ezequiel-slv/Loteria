@@ -40,24 +40,28 @@ public class CadastroUsuario extends Jogador{
             boolean senhaInvalida = !(upperAndLow && num && especialCharacter);
 
             if (!nomeDBInvalido){
-                if (!emailInvalido){
-                    if (!senhaInvalida){
-                        System.out.println("Cadastro feito com sucesso!");
-                        break;
-                    }else {
-                        System.out.println("Digite uma senha válida!");
-                    }
-                }else{
-                    System.out.println("Digite um email válido!");
-                }
+                return;
             }else{
                 System.out.println("Digite um nome válido!");
+            }
+
+            if (!emailInvalido){
+               return;
+            }else{
+                System.out.println("Digite um email válido!");
+            }
+
+            if (!senhaInvalida){
+                System.out.println("Cadastro feito com sucesso!");
+                break;
+            }else {
+                System.out.println("Digite uma senha válida!");
             }
         }
         entrada.close();
     }
 
-    public void Salvar() throws SQLException {
+    public void addDataUser() throws SQLException {
         String sql = "INSERT INTO user (nome, email, senha) VALUES (?, ?, ?)";
 
         try (Connection connection = ConexaoBD.getConectado();
