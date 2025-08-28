@@ -1,6 +1,10 @@
 package core.cadastro.dominio;
 
+import core.endereco.Endereco;
+
 public class Jogador extends Pessoa{
+    private String emailDB;
+    private String senhaDB;
     private static int codJogador = 0;
 
     public int gerarCodigo(){
@@ -34,5 +38,21 @@ public class Jogador extends Pessoa{
     @Override
     public void setCpfDB(String cpfDB) {
         super.setCpfDB(cpfDB);
+    }
+
+    public String getEmailDB() {
+        return emailDB;
+    }
+
+    public void setEmailDB(String emailDB) {
+        this.emailDB = emailDB;
+    }
+
+    public String getSenhaDB() {
+        return senhaDB;
+    }
+
+    public void setSenhaDB(String senhaDB) {
+        this.senhaDB = senhaDB;
     }
 }

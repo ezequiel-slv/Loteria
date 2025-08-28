@@ -2,12 +2,11 @@ package core.cadastro.dominio;
 
 import core.endereco.Endereco;
 
-public abstract class Pessoa {
+public abstract class Pessoa extends Endereco{
 
     protected String nomeDB;
     protected String datanascimentoDB;
     protected String cpfDB;
-    protected Endereco endereco;
 
     public String getNome() {
         return nomeDB;

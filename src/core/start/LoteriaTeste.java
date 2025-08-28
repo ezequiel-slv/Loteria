@@ -1,27 +1,28 @@
 package core.start;
 
-import core.cadastro.dominio.CadastroEndereco;
-import core.cadastro.dominio.CadastroUsuario;
+import core.cadastro.dominio.Cadastro;
 
 import java.sql.SQLException;
 
 public class LoteriaTeste {
     public static void main(String[] args) {
-        CadastroEndereco endereco = new CadastroEndereco();
-        endereco.cadastarEndereco();
+        Cadastro cadastro = new Cadastro();
+
+        cadastro.cadastarEndereco();
+        cadastro.criarUsuario();
 
         try {
-            endereco.addDataAdress();
+            cadastro.addDataAdress();
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
 
-        CadastroUsuario cadastroUser = new CadastroUsuario();
-        cadastroUser.criarUsuario();
         try {
-            cadastroUser.addDataUser();
+            cadastro.addDataUser();
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
+
+
     }
 }
