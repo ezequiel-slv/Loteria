@@ -1,9 +1,7 @@
 package core.cadastro.dominio;
 
 import core.bancodedados.conexao.ConexaoBD;
-import core.endereco.Endereco;
 import core.exception.ErrorCriarUsuario;
-
 import java.sql.*;
 import java.util.Scanner;
 
@@ -111,7 +109,7 @@ public class Cadastro{
             statement.executeUpdate();
 
             ResultSet rs = statement.getGeneratedKeys();
-            int idEndereco = -1;
+            int idEndereco;
             if (rs.next()){
                 idEndereco = rs.getInt(1);
             }else{
@@ -138,7 +136,7 @@ public class Cadastro{
             this.jogador.setSenhaDB(entrada.nextLine());
 
             boolean nomeDBInvalido = jogador.getNomeDB() == null || jogador.getNomeDB().isEmpty();
-            boolean emailInvalido = !jogador.getEmailDB().matches(".*[@].*") || jogador.getEmailDB().isEmpty();
+            boolean emailInvalido = !jogador.getEmailDB().matches(".*'@'.*") || jogador.getEmailDB().isEmpty();
             boolean upper = jogador.getSenhaDB().matches(".*[A-Z].*");
             boolean low = jogador.getSenhaDB().matches(".*[a-z].*");
             boolean num = jogador.getSenhaDB().matches(".*[0-9].*");
